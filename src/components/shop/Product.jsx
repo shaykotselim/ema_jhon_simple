@@ -1,12 +1,12 @@
 import React from 'react';
-
+import { FaCartPlus } from 'react-icons/fa';
 const Product = (props) => {
    
         const {img, name, price, seller, ratings} = props.product
         const handleAddToCart = props.handleAddToCart;
         return (
         <>
-            <div className="border h-[500px] rounded relative">
+            <div className="border  h-[610px] lg:h-[500px] rounded relative">
                     <div className="p-2">
                         <img className="rounded" src={img} alt="" />
                     </div>
@@ -17,8 +17,8 @@ const Product = (props) => {
                         <p className=" text-md font-medium">Rating: {ratings} star</p>
                     </div> 
                     <div>
-                    <button onClick={()=>handleAddToCart()} className="bg-purple-500 h-8 mt-8 w-full border text-white
-                    rounded absolute bottom-0 hover:bg-orange-500 ">Add to Cart</button>     
+                        <button onClick={()=>handleAddToCart(props.product)} className="flex gap-2 justify-center items-center  bg-purple-500 h-8 mt-8 w-full border text-white
+                        rounded absolute bottom-0 hover:bg-orange-500 ">Add To Cart<FaCartPlus/> </button>     
                     </div>  
             </div>   
         </>
